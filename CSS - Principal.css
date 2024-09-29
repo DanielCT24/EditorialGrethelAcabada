@@ -219,7 +219,7 @@ body{
     align-items: center;
     text-align: center;
     position: relative;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 
@@ -890,6 +890,7 @@ body{
     display: flex;
     align-items: center;
     max-width: 1200px;
+    margin-top: 17px;
 }
 
 .menu-1{
