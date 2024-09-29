@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Page Not Found</title>
+    <script>
+        // Obtiene la URL solicitada
+        var path = window.location.pathname;
+
+        // Verifica si la URL termina en .html
+        if (path.endsWith('.html')) {
+            // Reemplaza .html con una URL amigable
+            var newPath = path.replace('.html', '');
+
+            // Redirige a la URL amigable
+            window.location.replace(newPath);
+        }
+    </script>
+</head>
+<body>
+    <p>If you are not redirected, <a href="/">click here</a>.</p>
+</body>
+</html>

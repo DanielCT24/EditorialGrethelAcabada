@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de la Boleta</title>
+    <link rel="stylesheet" href="CSS - Boleta.css">
+
+
+
+    
+</head>
+<body>
+    <div class="boleta-container">
+        <h1>Boleta de Ventas Electrónico</h1>
+        <div class="containerlogo">
+            <a href="/"><img class="logo" src="/LOGO.webp" alt=""></a>
+        </div>
+
+        <div class="editorial">
+            <h2>Fondo Editorial Grethel</h2>
+            <a href="https://maps.app.goo.gl/dawTfqAEDtirWpCu5"><p>Mercado Sur 125, Huacho 15136 🗺️</p></a>
+
+
+        </div>
+
+        <div id="detallesBoleta"></div>
+        <div id="datosCompras"></div>  <!-- Div para ID y Fecha -->
+        <div id="cart-items"></div>
+        <div id="datosEnvio"></div>    <!-- Div para el resto de datos -->
+
+        <div class="user-info">
+            <h2 class="datosparaenvio">Datos para el envío</h2>
+            <p><strong class="envio">Nombres:</strong> <span id="userNames">Nombre Completo</span></p>
+            <p><strong class="envio">Correo Electrónico:</strong> <span id="userEmail" class="truncate">Correo</span></p>
+            <p><strong class="envio">Teléfono de Contacto:</strong> <span id="userPhone">Teléfono</span></p>
+            <p><strong class="envio">DNI:</strong> <span id="userDNI">Teléfono</span></p>
+            <p><strong class="envio">Dirección de Envío:</strong> <span id="displayAddress">Teléfono</span></p>
+
+        </div>   
+        <div class="partefinal"> 
+          <h3> Los precios más bajos, Editorial Grethel</h3>
+          <span> No apto para sunat</span>
+        </div>
+    </div>
+
+    <script>
+        function cargarDetallesBoleta() {
+    // Obtener el ID de la compra desde localStorage
+    const compraId = localStorage.getItem('selectedPurchaseId');
+    let datosGenerados = JSON.parse(localStorage.getItem('datosGenerados')) || [];
+    const detallesBoleta = document.getElementById('detallesBoleta');
+
+    // Buscar la compra correspondiente usando el ID
+    const compraSeleccionada = datosGenerados.find(data => data.id === compraId);
+
+    // Obtener el descuento almacenado en localStorage
+    const descuentoAplicado = localStorage.getItem('appliedDiscount');
+
+    // Mostrar los detalles de la compra
+    if (datosGenerados.length > 0) {
+        // Usar los últimos datos guardados
+        const ultimoRegistro = datosGenerados[datosGenerados.length - 1];
+
+        // Mostrar datos en los divs correspondientes
+        document.getElementById('datosCompras').innerHTML = `
+            <p class="id-compra">Compra WEB: ${ultimoRegistro.id}</p>
+            <p style="display: none">Fecha de Compra: ${ultimoRegistro.fecha}</p>
+        `;
+
+        document.getElementById('datosEnvio').innerHTML = `
+            <p class="comprainfo"> ${ultimoRegistro.subtotal}</p>
+            <p class="comprainfo"> ${ultimoRegistro.impuesto}</p>
+            <p class="comprainfo"> ${ultimoRegistro.envio}</p>
+            ${descuentoAplicado ? `<p class="comprainfo">Descuento aplicado: S/ ${descuentoAplicado}</p>` : ''}
+            <p class="preciofinal">Total: ${ultimoRegistro.precio}</p>
+        `;
+    } else {
+        document.getElementById('datosCompras').innerHTML = `<p>No hay datos de compra disponibles.</p>`;
+        document.getElementById('datosEnvio').innerHTML = `<p>No hay datos de envío disponibles.</p>`;
+    }
+}
+
+window.onload = cargarDetallesBoleta;
+
+    </script>
+
+
+
+
+    <script>
+        // Recuperar el valor de localStorage
+        const streetAddress = localStorage.getItem('streetAddress');
+        const displayAddress = document.getElementById('displayAddress');
+
+        // Mostrar la dirección en el HTML
+        if (streetAddress) {
+            displayAddress.textContent = ` ${streetAddress}`;
+        } else {
+            displayAddress.textContent = 'No hay dirección guardada.';
+        }
+    </script>
+
+
+
+
+
+
+
+
+<script src="JS - Usuario.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+    // Recuperar los datos guardados en localStorage
+    const savedCartData = JSON.parse(localStorage.getItem('savedCartData')) || [];
+    const cartItemsElement = document.getElementById('cart-items');
+    if (savedCartData.length === 0) {
+    cartItemsElement.innerHTML = '<p>No hay productos en el carrito.</p>';
+} else {
+    // Crear la tabla y el encabezado
+    const table = document.createElement('table');
+    table.classList.add('cart-table');
+
+    const header = document.createElement('thead');
+    header.innerHTML = `
+        <tr>
+            <th class= "productos">Img.</th>
+            <th class= "productos">Producto</th>
+            <th class= "productos">Cant.</th>
+            <th class= "productos">Precio </th>
+            <th class= "productos">Monto Total</th>
+
+        </tr>
+    `;
+    table.appendChild(header);
+
+    const body = document.createElement('tbody');
+
+    // Agregar cada elemento del carrito a la tabla
+    savedCartData.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td><img class = "img-producto" src="${item.image}" alt="${item.name}"></td>
+            <td>${item.name}</td>
+            <td>${item.quantity}</td>
+            <td>S/ ${parseFloat(item.price).toFixed(2)}</td>
+            <td class="preciototal">S/ ${parseFloat(item.total).toFixed(2)}</td>
+
+        `;
+        body.appendChild(row);
+    });
+
+    table.appendChild(body);
+    cartItemsElement.appendChild(table);
+}
+
+
+</script>
+
+
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Recuperar el descuento desde localStorage
+    const discount = localStorage.getItem('appliedDiscount');
+    
+    // Mostrar el descuento en un elemento HTML
+    const discountElem = document.getElementById('discountValue');
+    if (discountElem && discount) {
+        discountElem.textContent = `Descuento aplicado: S/ ${discount}`;
+    }
+});
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

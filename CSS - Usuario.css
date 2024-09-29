@@ -1,0 +1,474 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f4f4f4;
+    font-family: 'Poppins'; 
+    text-decoration: none;
+
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+h3 {
+    position: fixed;
+    bottom: 0; /* Alinea el texto en la parte baja del contenedor */
+    font-size: 12px;
+    opacity: 20%;
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+span#userEmail {
+    text-transform: none;
+}
+
+.user-card {
+    background-color: #4d4949;
+    color: #fff;
+    width: 300px; /* Tamaño más grande para la tarjeta */
+    padding: 30px;
+    position: fixed;
+    left: 0; /* Mover la tarjeta al margen izquierdo */
+    top: 0;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    width: 150px; /* Aumentar tamaño del avatar */
+    height: 150px; /* Aumentar tamaño del avatar */
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #444;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    top: 10px;
+}
+
+.user-info {
+    text-align: center;
+}
+
+.user-info p {
+    margin: 15px 0;
+    font-size: 16px; /* Tamaño más grande del texto */
+    text-transform: uppercase;
+}
+
+.user-info strong {
+    display: block;
+    font-size: 20px; /* Tamaño del texto de las etiquetas */
+    text-transform: capitalize; /* Convertir texto a mayúsculas */
+}
+
+
+.truncate {
+    display: inline-block; /* Permite aplicar el ancho */
+    max-width: 180px; /* Ajusta el ancho máximo según tu necesidad */
+    overflow: hidden; /* Oculta el desbordamiento */
+    text-overflow: ellipsis; /* Agrega "..." al final del texto truncado */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh; /* Asegura que el contenedor ocupe al menos el 100% de la altura de la ventana */
+}
+
+.logout-button {
+    position: fixed;
+    bottom: 24px; /* Ajusta la distancia desde el borde inferior según lo necesites */
+    left: 20px;   /* Ajusta la distancia desde el borde izquierdo según lo necesites */
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    z-index: 1000; /* Asegúrate de que el botón esté por encima de otros elementos */
+    margin-left: 86px;
+}
+
+
+
+.logout-button:hover {
+    background-color: #d32f2f;
+}
+
+
+.btn-ver-boleta {
+    background-color: #e13fe9; /* Color principal (puedes cambiarlo) */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra debajo del botón */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold; /* Hace que el texto sea más grueso */
+    transition: all 0.3s ease; /* Transición suave para cualquier cambio de estilo */
+}
+
+.btn-ver-boleta:hover {
+    background-color: #7e16a8; /* Color al pasar el cursor */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al hacer hover */
+    transform: translateY(-2px); /* Efecto de levantamiento al pasar el ratón */
+}
+
+.btn-ver-boleta:active {
+    background-color: #de22e5; /* Color cuando se hace clic */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15); /* Sombra más pequeña al hacer clic */
+    transform: translateY(0); /* Devuelve a su lugar original */
+}
+
+@media(max-width: 991px){
+
+
+    .btn-ver-boleta {
+        background-color: #e13fe9; /* Color principal (puedes cambiarlo) */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra debajo del botón */
+        cursor: pointer;
+        font-size: 11px;
+        font-weight: bold; /* Hace que el texto sea más grueso */
+        transition: all 0.3s ease; /* Transición suave para cualquier cambio de estilo */
+    }
+
+
+
+
+
+
+.user-card {
+    background-color: #4d4949;
+    color: #fff;
+    width: 77px; /* Tamaño más grande para la tarjeta */
+    padding: 30px;
+    position: fixed;
+    left: 0; /* Mover la tarjeta al margen izquierdo */
+    top: 0;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.user-info p {
+    margin: 15px 0;
+    font-size: 12px; /* Tamaño más grande del texto */
+    text-transform: uppercase;
+    
+}
+
+.user-info strong {
+    display: block;
+    font-size: 14px; /* Tamaño del texto de las etiquetas */
+    text-transform: capitalize; /* Convertir texto a mayúsculas */
+}
+
+
+
+.avatar {
+    width: 100px; /* Aumentar tamaño del avatar */
+    height: 100px; /* Aumentar tamaño del avatar */
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #444;
+}
+
+.logout-button {
+    position: fixed;
+    bottom: 24px; /* Ajusta la distancia desde el borde inferior según lo necesites */
+    left: -76px;   /* Ajusta la distancia desde el borde izquierdo según lo necesites */
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+    z-index: 1000; /* Asegúrate de que el botón esté por encima de otros elementos */
+    margin-left: 86px;
+}
+
+    span#userEmail {
+        display: inline-block; /* Asegura que el elemento se comporte correctamente con el truncamiento */
+        max-width: 110px;
+        overflow: hidden; /* Oculta el texto que sobrepasa el ancho */
+        white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
+        text-overflow: ellipsis; /* Añade los puntos suspensivos al texto que se trunca */
+    }
+
+
+    
+    
+}
+
+
+
+
+
+/* ----------------------------------------TRANSICIÓN------------------------------------------------------------ */
+
+
+
+
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 50px;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader img {
+    width: 500px;
+    height: auto;
+}
+
+.hidden {
+    display: none;
+}
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader img {
+    width: 500px;
+    height: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+
+
+
+
+/* ------------PEDIDOS------------------- */
+
+
+h1 {
+    position: ABSOLUTE; /* Hace que el h1 se quede fijo en la pantalla */
+    top: 100px; /* Ajusta la distancia desde la parte superior de la pantalla */
+    left: 20px; /* Ajusta la distancia desde el margen izquierdo */
+    margin: 0; /* Elimina cualquier margen por defecto */
+    margin-left: 567px;
+    margin-top: 7px;
+    z-index: 1000; /* Asegura que el h1 se mantenga por encima de otros elementos */
+}
+
+
+
+@media(max-width: 991px){
+
+    h1 {
+    font-size: 17px;
+    left: -377px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TABLA DE PEDIDOS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+
+/* Contenedor de la tabla para centrarla horizontalmente */
+.table-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Altura del contenedor igual a la altura de la ventana */
+}
+
+/* Estilos para la tabla */
+#id-table {
+    width: 1200px; /* Ancho de la tabla */
+    max-width: 1200px; /* Asegura que la tabla no se expanda más allá del contenedor */
+    border-collapse: collapse; /* Elimina el espacio entre bordes */
+    font-family: Poppins, sans-serif; /* Fuente de la tabla */
+    height: 200px; /* Altura definida para la tabla */
+    overflow: auto; /* Permite el desplazamiento si el contenido es más grande que la altura */
+    margin-top: 190px;
+    margin-left: 565px;
+    border: none; /* Elimina el borde exterior de la tabla */
+    position: absolute;
+}
+
+/* Estilo para las celdas y las filas */
+#id-table th, #id-table td {
+    border: none; /* Elimina el borde de las celdas */
+    padding: 13px; /* Espaciado interno */
+    text-align: center; /* Alineación del texto */
+    white-space: nowrap; /* Evita el ajuste de línea dentro de las celdas */
+    height: 50px; /* Altura de las celdas */
+    background-color: transparent; /* Fondo transparente para las celdas */
+    background: #f4f4f4;
+    border-bottom: 2px solid black; /* Borde inferior negro */
+    font-weight: 500;
+}
+
+/* Estilo para los encabezados de la tabla */
+#id-table th {
+    font-weight: 700; /* Fuente en negrita */
+    height: 51px; /* Altura de los encabezados */
+    text-transform: uppercase;
+    border-bottom: 2px solid black; /* Borde inferior negro */
+    letter-spacing: 2px;
+}
+
+/* Estilo para las filas de la tabla */
+#id-table tr:nth-child(even) {
+    background-color: #efefef; /* Color de fondo alterno para filas pares */
+}
+
+
+
+/* Estilo para la tabla en dispositivos móviles */
+/* Estilos responsivos */
+@media (max-width: 991px) {
+    /* Ajusta el tamaño de la tabla en pantallas pequeñas */
+    #id-table {
+        width: 100%; /* Hace que la tabla ocupe el 100% del ancho del contenedor */
+        margin-left: 0; /* Elimina el margen izquierdo */
+        margin-left: 170px;
+        position: absolute;
+    }
+    
+    /* Ajusta el tamaño de fuente y padding de las celdas en pantallas pequeñas */
+    #id-table th, #id-table td {
+        font-size: 10px; /* Tamaño de fuente más pequeño */
+        padding: 8px; /* Reducir padding */
+        white-space: normal; /* Permite el ajuste de línea dentro de las celdas */
+        height: auto; /* Permite que las celdas se ajusten al contenido */
+    }
+
+    /* Ajusta el tamaño del encabezado en pantallas pequeñas */
+    #id-table th {
+        height: auto; /* Permite que el encabezado se ajuste al contenido */
+        font-size: 12PX; /* Tamaño de fuente más pequeño para el encabezado */
+    }
+}
+
+
+h2 {
+    margin-left: 1536px;
+    margin-top: 108PX;
+    color: #e37de9;
+    POSITION: ABSOLUTE;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+
+@media (max-width: 991px) {
+
+/* RESPONSIVE */
+h2 {
+    margin-left: 458PX;
+    margin-top: 118PX;
+    color: #e37de9;
+    font-size: 15px;
+    width: 200px;
+    position: absolute;
+}
+
+h1 {
+    /* position: fixed; */ /* Hace que el h1 se quede fijo en la pantalla */
+    top: 100px; /* Ajusta la distancia desde la parte superior de la pantalla */
+    left: 20px; /* Ajusta la distancia desde el margen izquierdo */
+    margin: 0; /* Elimina cualquier margen por defecto */
+    margin-left: 163px;
+    margin-top: 17px;
+    z-index: 1000; /* Asegura que el h1 se mantenga por encima de otros elementos */
+    position: absolute;
+}
+
+}
+
+p.footer-text {
+    MARGIN-TOP: 18px;
+}

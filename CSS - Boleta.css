@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    text-decoration: none;
+    list-style: none;
+
+}
+
+body {
+    font-family: 'Poppins'; 
+    background-color: #f4f4f4; /* Color de fondo claro */
+    margin: 0;
+    padding: 20px;
+
+}
+
+.containerlogo {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100px; /* Ajusta según sea necesario */
+}
+.logo {
+    width: 252px; /* Para que la imagen no exceda el contenedor */
+    height: auto; /* Mantener la proporción de la imagen */
+}
+
+
+.editorial {
+text-align: center;
+}
+
+.editorial h2 {
+ font-size: 26px;
+ text-transform: uppercase;
+}
+
+
+.editorial p {
+    font-size: 14px;
+    margin-top: -19px;
+    margin-bottom: 40px;
+}
+
+p.id-compra {
+    
+font-size: 20px;
+text-align: center;
+margin-bottom: 39px;
+text-transform: uppercase;
+font-weight: 500;
+
+}
+.boleta-container {
+    max-width: 500px; /* Ancho máximo de la boleta más delgado */
+    margin: 20px auto; /* Centrar la boleta en la página */
+    padding: 15px; /* Espaciado interno reducido */
+    background-color: #ffffff; /* Fondo blanco para la boleta */
+    border: 1px solid #dddddd; /* Borde sutil */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+}
+
+.boleta-container h1 {
+    font-size: 23px; /* Tamaño de fuente para el título */
+    text-transform: capitalize;
+    color: #000000; /* Color del título */
+    text-align: center; /* Centrar el título */
+    margin-bottom: 21px; /* Espaciado inferior reducido */
+}
+
+.user-info {
+    margin-top: 15px; /* Espaciado superior reducido para la sección de usuario */
+}
+
+.user-info p {
+    margin: 8px 0; /* Espaciado entre párrafos más delgado */
+    font-size: 15px; /* Tamaño de fuente más pequeño para la información del usuario */
+    line-height: 1.4; /* Espaciado entre líneas más compacto */
+}
+
+#detallesBoleta {
+    margin-bottom: 15px; /* Espaciado inferior para detalles de boleta */
+}
+
+#cart-items {
+    margin-top: 15px; /* Espaciado superior para items del carrito */
+}
+
+
+
+.cart-table {
+    width: 99%;
+    border-collapse: collapse; /* Eliminar espacios entre bordes */
+    margin-top: 20px; /* Espaciado superior */
+}
+
+.cart-table thead {
+    background-color: transparent; /* Sin fondo */
+    color: #007bff; /* Color del texto en el encabezado */
+    font-weight: bold; /* Negrita para el encabezado */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+.cart-table th, .cart-table td {
+    padding: 10px 15px; /* Espaciado interno */
+    text-align: left; /* Alinear texto a la izquierda */
+    font-size: 14px; /* Tamaño de fuente */
+    border-bottom: 1px solid #dddddd; /* Solo bordes en la parte inferior */
+}
+
+.cart-table tr:nth-child(even) {
+    background-color: transparent; /* Sin color de fondo en filas alternas */
+}
+
+.cart-table tr:hover {
+    background-color: #f0f0f0; /* Color al pasar el ratón, más suave */
+}
+
+.cart-table img {
+    width: 80px; /* Tamaño de imagen controlado */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 4px; /* Bordes redondeados para imágenes */
+}
+
+.cart-table td {
+    padding: 12px 15px; /* Espaciado interno */
+    text-align: center;
+}
+
+.cart-table th {
+    border-bottom: 2px solid #5d6267c7; /* Línea más gruesa para el encabezado */
+    text-align: center;
+}
+
+.contenedorproductos {
+    width: 100px;
+}
+
+th.productos {
+    color: rgb(76, 75, 75);
+}
+
+div#datosEnvio {
+    text-align: right;
+    font-weight: 500;
+}
+
+td.preciototal{
+    font-size: 14px;
+}
+
+.datosparaenvio{
+    margin-top: 50px;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+strong.envio{
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.preciofinal {
+    font-weight: 700;
+    font-size: 19px;
+}
+
+.partefinal {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.partefinal h3 {
+    text-transform: uppercase;
+}
+.partefinal span {
+    text-transform: uppercase;
+}
+
+@media (max-width: 992px) {
+
+    .cart-table td {
+        padding: 8px 7px;
+        text-align: center;
+        font-size: 11px;
+    }
+    th.productos {
+
+        font-size: 10px;
+    }
+    .cart-table img {
+        width: 39px;
+        height: auto;
+        border-radius: 4px;
+    }
+
+    .datosparaenvio {
+        margin-top: 50px;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+    strong.envio {
+        font-size: 14px;
+    }
+    .user-info p {
+        font-size: 13px;
+        width: 363px;
+    }
+    p.comprainfo {
+        font-size: 14px;
+    }
+    p.preciofinal{ 
+        font-size: 18px;
+    }
+    .partefinal h3 {
+        text-transform: uppercase;
+        font-size: 15px;
+    }
+    .partefinal span {
+        text-transform: uppercase;
+        font-size: 12px;
+
+    }
+
+
+    .editorial h2 {
+        font-size: 22px;
+        text-transform: uppercase;
+    }
+
+    .editorial p {
+        font-size: 13px;
+        text-transform: uppercase;
+    }
+
+    p.id-compra{
+        font-size: 17px;
+    }
+
+
+
+
+
+
+
+
+
+}

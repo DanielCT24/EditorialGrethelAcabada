@@ -1,0 +1,949 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Editorial Grethel</title>
+    <script src="JS - Principal.js" ></script>
+    <script src="JS - Carrito.js" ></script>
+    <link rel="stylesheet" href="CSS - Carrito.css"></link>
+    <link rel="stylesheet" href="CSS - Checkout.css">
+    <link rel="icon" sizes="180x180" href="ICON/android-chrome-192x192.webp">
+    <link rel="icon" type="image/png" sizes="32x32" href="ICON/favicon-32x32.webp">
+    <link rel="icon" type="image/png" sizes="16x16" href="ICON/favicon-16x16.webp">
+    <link rel="manifest" href="site.webmanifest">
+    <script src="https://kit.fontawesome.com/21bc0e3a65.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+ 
+
+
+
+</head>
+
+<style>
+    /* -------------------------------------------ANIMCACIÓN HEADER----------------------------------------------- */
+
+.header-nav a {
+    position: relative;
+    text-decoration: none; /* Elimina el subrayado por defecto */
+    color: #fff; /* Cambia esto según el color de tu diseño */
+    padding: 10px;
+    display: inline-block;
+}
+
+.header-nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: #50026e; /* Cambia esto según el color de la línea que quieras */
+    left: 50%;
+    bottom: 0;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.header-nav a:hover::after {
+    width: 100%;
+}
+</style>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Header - menu -->
+<header>
+    <div class="menu ">
+        <a href="/"><img class="logo-1 " src="/LOGO.webp" alt=""></a>
+        <input type="checkbox" id="menu">
+        <label for="menu">
+            <img src="/HEADER Y BODY/menu.webp" loading="lazy" class="menu-icono">
+
+
+
+    
+            <a href="/Usuario" class="btn__login">
+                <img src="/Imagen-Login.webp" alt="Login" loading="lazy" class="login-icon">
+                <h3 class="userDNI" id="userDNI">Nombre del Usuario</h3>
+            </a>
+            
+
+
+
+        </label>
+
+        <nav class="navbar fade-in">
+            <div class="menu-1 fade-in">
+                <div class="containermenu">
+                
+                    <ul>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/#ofertas">Ofertas</a></li>
+                        <li><a href="/CATÁLOGO EDITORIAL GRETHEL.pdf">Catálogo</a></li>
+                        <li><a href="https://maps.app.goo.gl/dawTfqAEDtirWpCu5">Envío</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+<!-------------------------------------------------- PC --------------->
+
+            <a href="/"><img class="logo-2 " src="/LOGO.webp" alt=""></a>
+            
+
+
+
+            <a href="/Usuario" class="btn__login" id="loginButton">
+                <img src="/Imagen-Login.webp" alt="Login" loading="lazy" class="login-icon-header">
+                <h3 class="userNamesPC" id="userNames">Nombre del Usuario</h3>
+
+            </a>
+
+
+
+
+        </nav>
+
+
+    </div>
+</header>
+
+
+   
+
+
+<main>
+
+
+    <div class="container">
+        <!-- Formulario de Información de Envío -->
+        <div class="shipping-info">
+            <h2>Información de Envío</h2>
+            <form id="paymentForm">
+
+
+
+
+                <div class="section">
+                    <label> DIRECCIÓN</label>
+                        <div class="search-container" >
+                            <div class="search-box" >
+                                <input type="text" id="searchInput" placeholder="Digite Su Departamento..." required>
+                                <div class="search-icon">&#128269;</div>
+                            </div>
+                            <div class="dropdown-menu" id="dropdownMenu">
+                                <!-- Opciones serán agregadas dinámicamente con JavaScript -->
+                            </div>
+                        </div>
+
+
+                    <input type="text" id="street" placeholder="Calle y Número (*Obligatorio)" required>
+                    <input type="text" id="apartment" placeholder="Dpto, Oficina, etc. (*Opcional)">
+                    <input type="text" id="postal-code" placeholder="Código Postal (*Opcional)">
+                    <input type="text" id="alias" placeholder="Referencia (*Opcional)">
+                </div>
+
+                <div class="delivery-container">
+                    <label for="delivery">SELECCIONE UNA OPCIÓN DE ENVÍO DELIVERY</label>
+                    
+                    <div class="delivery-option" required>
+                        <label>
+                            <input type="radio" name="delivery" value="marvisur" required>
+                            Marvisur <span class="info-icon"> 🚚  </span>
+                        </label>
+                        <span class="delivery-date">Tu pedido llegará entre el <span id="start-date1"></span> y <span id="end-date1"></span></span>
+                    </div>
+                    
+                    <div class="delivery-option" required>
+                        <label>
+                            <input type="radio" name="delivery" value="olvacourier" required>
+                            OlvaCourier <span class="info-icon"> 🚚  </span>
+                        </label>
+                        <span class="delivery-date">Tu pedido llegará entre el <span id="start-date2"></span> y <span id="end-date2"></span></span>
+                    </div>
+                    
+                    <div class="delivery-option" required>
+                        <label>
+                            <input type="radio" name="delivery" value="shalom" required>
+                            Shalom <span class="info-icon"> 🚚 </span>
+                        </label>
+                        <span class="delivery-date">Tu pedido llegará entre el <span id="start-date3"></span> y <span id="end-date3"></span></span>
+                    </div>
+                </div>
+                
+
+
+
+
+                <!-- Información de Contacto -->
+                <div class="section">
+                    <label for="email">INFORMACIÓN DE CONTACTO</label>
+                    <input type="email" id="email" placeholder="Correo electrónico" required>
+                    <div class="name-fields">
+                        <input type="text" id="first-name" placeholder="Nombres" required>
+                        <input type="text" id="last-name" placeholder="Apellidos"   required>
+                    </div>
+                    <div class="phone-fields">
+                        <span class="flag-icon">🇵🇪</span>
+                        <input type="tel" id="phone" placeholder="+51 999 999 999" maxlength="9" required>
+                        
+                    </div>
+                    <input type="text" id="dni" placeholder="DNI" maxlength="8" required>
+                </div>
+
+
+
+
+<!-- Cupón de Descuento -->
+<div class="section">
+    <label for="coupon">CUPÓN DE DESCUENTO</label>
+    <input type="text" id="coupon" placeholder="Ingresa tu cupón">
+    <button type="button" id="validateCoupon">Validar Descuento</button>
+</div>
+
+                
+            
+
+
+
+
+                
+
+
+                <!-- Método de Pago -->
+                <div class="section">
+                    <label>SELECCIONA MEDIO DE PAGO</label>
+                    <div class="payment-methods" required>
+                        <label>
+                            <input type="radio" name="payment" value="yape" required>
+                            <img class="pagoyape-img" src="BANCAMOVIL.avif" loading="lazy" alt="Yape">
+                        </label>
+                    </div>
+                </div>
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="yape-popup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closePopup('yape-popup')">&times;</span>
+        <h2 class="txt-ventana">PAGO CON BANCAS MÓVILES</h2>
+        <p>Gracias por su compra</p>
+        <div class="yape-number">Editorial Grethel</div>
+        <img src="qr.jpg" loading="lazy" alt="QR Code" class="qr-code">
+        <p>Total a pagar</p>
+        <div class="summary-total">
+            <p id="summaryTotalGeneral2">Total S/ 0.00</p>
+        </div>
+        <div class="form-group">
+            <label for="operacion">Digita tu nro. de operación:</label>
+            <input type="text" id="operacion" class="input-field" oninput="validateForm()">
+        </div>
+        <div class="form-group">
+            <label for="confirma-operacion">Confirma tu nro. de operación:</label>
+            <input type="text" id="confirma-operacion" class="input-field" oninput="validateForm()">
+        </div>
+        <p id="error-message" class="error-message"></p>
+
+        <div class="form-group">
+            <label for="fecha-hora">Fecha y hora de la operación:</label>
+            <input type="datetime-local" id="fecha-hora" class="input-field" onchange="validateForm()">
+        </div>
+        <p class="warning">- La fecha y hora son requeridas</p>
+
+        <!-- Adjuntar comprobante -->
+        <input type="file" id="comprobante" class="input-file" onchange="handleFileUpload()">
+        <label for="comprobante" class="upload-btn" id="upload-label">📎 Adjuntar comprobante</label>
+
+        <button id="finalize-btn" class="finalize-btn" disabled onclick="finalizePurchase('¡Tu compra ha sido exitosa!')">Finalizar</button>
+
+    </div>
+    
+
+
+<!-- Modal -->
+<div id="customModal" class="custom-modal">
+    <div class="custom-modal-content">
+        <span class="custom-close" onclick="closeModal()">&times;</span>
+        <div class="custom-modal-body">
+            <div class="checkmark-wrapper">
+                <div class="checkmark-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M20.285 6.711l-11.504 11.39-5.393-5.428-1.456 1.458 6.85 6.938 12.963-12.846-1.456-1.464z"/>
+                    </svg>
+                </div>
+            </div>
+            <p id="modalMessage">¡Felicidades por tu compra!</p>
+            <p id="modalMessage">Revisa tu Cuenta</p>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+                <!-- Términos y Condiciones -->
+                <div class="section">
+                    <label>
+                        <input type="checkbox" id="terms" required>
+                        He leído y acepto los <a href="#" id="openTermsModal">términos y condiciones</a>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="privacy" required>
+                        He leído y acepto la <a href="#" id="openPrivacyModal">política de privacidad de datos</a>
+                    </label>
+                </div>
+                
+                <!-- Modal para Términos y Condiciones -->
+                <div id="termsModal" class="modal-checkout modal-terms">
+                    <div class="modal-content-checkout">
+                        <span class="close-checkout" id="closeTerms">&times;</span>
+                        <h1 class="terminos">Términos y Condiciones</h1>
+                        <p class="terminos">Al utilizar este sitio web, aceptas cumplir con los siguientes términos y condiciones. Si no estás de acuerdo con alguna parte de estos términos, te recomendamos que no utilices este sitio.</p>
+
+                        <h2 class="terminos">1. Aceptación de los Términos</h2>
+                        <p class="terminos">Estos términos y condiciones rigen el uso de este sitio web. Al acceder o utilizar el sitio, aceptas estar sujeto a estos términos. Si no aceptas estos términos, no debes usar el sitio.</p>
+                        
+                        <h2 class="terminos">2. Cambios en los Términos</h2>
+                        <p class="terminos">Nos reservamos el derecho de modificar estos términos en cualquier momento. Cualquier cambio será efectivo inmediatamente después de su publicación en el sitio. Te recomendamos que revises estos términos periódicamente para estar al tanto de cualquier modificación.</p>
+                        
+                        <h2 class="terminos">3. Uso del Sitio</h2>
+                        <p class="terminos">El usuario se compromete a usar el sitio de acuerdo con las leyes aplicables y no utilizar el sitio para fines ilegales o prohibidos. Está prohibido el uso de técnicas de "scraping" o cualquier otra forma de recolección automatizada de datos.</p>
+                        
+                        <h2 class="terminos">4. Propiedad Intelectual</h2>
+                        <p class="terminos">Todo el contenido del sitio, incluidos, entre otros, textos, gráficos, logotipos y software, es propiedad de la empresa o sus licenciantes y está protegido por las leyes de propiedad intelectual. Queda prohibida la reproducción o distribución del contenido sin autorización.</p>
+                        
+                        <h2 class="terminos">5. Limitación de Responsabilidad</h2>
+                        <p class="terminos">La empresa no será responsable de ningún daño directo, indirecto, incidental o consecuente que resulte del uso o la imposibilidad de uso del sitio. Esto incluye, pero no se limita a, daños por pérdida de beneficios, interrupción del negocio o pérdida de información.</p>
+                        
+                        <h2 class="terminos">6. Enlaces a Terceros</h2>
+                        <p class="terminos">Este sitio puede contener enlaces a sitios web de terceros. No somos responsables del contenido de estos sitios ni de sus políticas de privacidad. Te recomendamos que leas las políticas de privacidad de cada sitio que visites.</p>
+                        
+                        <h2 class="terminos">7. Legislación Aplicable</h2>
+                        <p class="terminos">Estos términos se regirán e interpretarán de acuerdo con las leyes del país donde se encuentra la empresa, sin dar efecto a sus principios sobre conflictos de leyes.</p>
+                        
+                        <h2 class="terminos">8. Contacto</h2>
+                        <p class="terminos">Si tienes preguntas sobre estos términos, puedes ponerte en contacto con nosotros a través del correo electrónico: soporte@ejemplo.com.</p>
+                        
+                        <h2 class="terminos">9. Aceptación de los Términos</h2>
+                        <p class="terminos">El uso continuado de este sitio tras la publicación de cambios en los términos implica la aceptación de dichos cambios.</p>
+                        
+                        <h2 class="terminos">10. Terminación</h2>
+                        <p class="terminos">Nos reservamos el derecho a cancelar o restringir el acceso al sitio en cualquier momento y por cualquier razón, sin previo aviso.</p>
+                        
+                        <h2 class="terminos">11. Limitaciones de Uso</h2>
+                        <p class="terminos">El usuario se compromete a no realizar actividades que puedan dañar, desactivar, sobrecargar o perjudicar el sitio, o interferir con el uso del sitio por parte de otros usuarios. Se prohíbe el uso del sitio para transmitir cualquier contenido ilegal, dañino, amenazante o acosador.</p>
+                        
+                        <h2 class="terminos">12. Indemnización</h2>
+                        <p class="terminos">El usuario acepta indemnizar y mantener indemne a la empresa, sus afiliados, empleados y agentes de cualquier reclamación, demanda o pérdida, incluyendo honorarios razonables de abogados, que surja del uso del sitio por parte del usuario o de su violación de estos términos.</p>
+                        
+                        <h2 class="terminos">13. Responsabilidad de Contenido</h2>
+                        <p class="terminos">La empresa no asume ninguna responsabilidad por el contenido generado por los usuarios o por el contenido de terceros que pueda aparecer en el sitio. Los usuarios son responsables de sus propias publicaciones y de cualquier daño que pueda resultar de ellas.</p>
+                        
+                        <h2 class="terminos">14. Política de Cookies</h2>
+                        <p class="terminos">Este sitio utiliza cookies para mejorar la experiencia del usuario. Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo al visitar un sitio web. Puedes optar por no aceptar cookies, pero esto puede afectar tu capacidad para utilizar el sitio de manera efectiva.</p>
+                        
+                        <h2 class="terminos">15. Fuerza Mayor</h2>
+                        <p class="terminos">No seremos responsables de ninguna falla o retraso en el cumplimiento de nuestras obligaciones en virtud de estos términos si dicha falla o retraso se debe a causas ajenas a nuestro control razonable, incluyendo, pero no limitándose a, actos de Dios, guerras, embargos, disturbios o desastres naturales.</p>
+                        
+                        <h2 class="terminos">16. Disposiciones Generales</h2>
+                        <p class="terminos">Si alguna disposición de estos términos se considera inválida o inaplicable, las demás disposiciones seguirán siendo válidas y aplicables. Estos términos constituyen el acuerdo completo entre el usuario y la empresa con respecto al uso del sitio.</p>
+                        
+                        <h2 class="terminos">17. Modificaciones</h2>
+                        <p class="terminos">La empresa se reserva el derecho de modificar estos términos en cualquier momento. Cualquier modificación será efectiva inmediatamente después de su publicación en el sitio. El uso continuado del sitio tras la publicación de cambios en los términos implica la aceptación de dichos cambios.</p>
+                        
+                        <h2 class="terminos">18. Derechos Reservados</h2>
+                        <p class="terminos">Todos los derechos no expresamente otorgados en estos términos son reservados por la empresa. Cualquier uso no autorizado del sitio o de su contenido puede ser objeto de acción legal.</p>
+                        
+                        <p class="terminos">Estos términos y condiciones fueron actualizados por última vez el 28/09/2024. Te agradecemos tu comprensión y cooperación.</p>
+                        
+                    </div>
+                </div>
+                
+                <!-- Modal para Política de Privacidad -->
+                <div id="privacyModal" class="modal-checkout modal-privacy">
+                    <div class="modal-content-checkout">
+                        <span class="close-checkout" id="closePrivacy">&times;</span>
+                        <h1 class="terminos">Política de Privacidad</h1>
+                        <p class="terminos">Esta política de privacidad describe cómo recogemos, usamos y compartimos tu información personal.</p>
+                        
+                        <h2 class="terminos">1. Información que Recogemos</h2>
+                        <p class="terminos">Recogemos información que tú nos proporcionas al registrarte, como tu nombre, correo electrónico, y otra información relevante.</p>
+                        
+                        <h2 class="terminos">2. Uso de la Información</h2>
+                        <p class="terminos">Usamos tu información para ofrecerte nuestros servicios, comunicarnos contigo, y mejorar nuestra plataforma.</p>
+                        
+                        <h2 class="terminos">3. Compartir Información</h2>
+                        <p class="terminos">No vendemos ni compartimos tu información personal con terceros sin tu consentimiento, salvo por requisitos legales.</p>
+                        
+                        <h2 class="terminos">4. Seguridad</h2>
+                        <p class="terminos">Tomamos medidas razonables para proteger tu información personal. Sin embargo, no podemos garantizar la seguridad absoluta.</p>
+                        
+                        <h2 class="terminos">5. Cambios a esta Política</h2>
+                        <p class="terminos">Nos reservamos el derecho de modificar esta política de privacidad en cualquier momento. Te notificaremos sobre cambios significativos.</p>
+                        
+                        <h2 class="terminos">6. Contacto</h2>
+                        <p class="terminos">Si tienes preguntas sobre esta política, contáctanos a través de nuestro formulario de contacto.</p>
+                        
+                        <h2 class="terminos">7. Cookies</h2>
+                        <p class="terminos">Este sitio utiliza cookies para mejorar tu experiencia. Puedes gestionar tus preferencias de cookies en la configuración de tu navegador.</p>
+                        
+                        <h2 class="terminos">8. Derecho a Acceder y Rectificar</h2>
+                        <p class="terminos">Tienes derecho a acceder, corregir o eliminar tu información personal en cualquier momento. Para hacerlo, contáctanos.</p>
+                        
+                        <h2 class="terminos">9. Retención de Datos</h2>
+                        <p class="terminos">Retenemos tu información personal solo durante el tiempo necesario para cumplir con los propósitos para los que fue recogida.</p>
+                        
+                        <h2 class="terminos">10. Transferencias Internacionales</h2>
+                        <p class="terminos">Si transferimos tu información personal a otros países, aseguraremos que se apliquen medidas adecuadas de protección de datos.</p>
+                        
+                        <h2 class="terminos">11. Menores de Edad</h2>
+                        <p class="terminos">No recogemos intencionadamente información de menores de 13 años. Si descubrimos que hemos recogido dicha información, la eliminaremos.</p>
+                        
+                        <h2 class="terminos">12. Quejas</h2>
+                        <p class="terminos">Si tienes alguna queja sobre nuestra política de privacidad o cómo manejamos tu información, puedes contactar con las autoridades competentes.</p>
+                        
+                        <h2 class="terminos">13. Consentimiento</h2>
+                        <p class="terminos">Al utilizar nuestro sitio, das tu consentimiento para la recopilación y uso de tu información como se describe en esta política.</p>
+                        
+                        <h2 class="terminos">14. Enlaces a Terceros</h2>
+                        <p class="terminos">Nuestro sitio puede contener enlaces a otros sitios. No somos responsables de las prácticas de privacidad de estos sitios.</p>
+                        
+                        <h2 class="terminos">15. Modificaciones a los Términos</h2>
+                        <p class="terminos">Cualquier modificación a esta política se publicará en esta página. Te recomendamos revisarla regularmente.</p>
+                        
+                    </div>
+                </div>
+                
+
+
+
+
+
+                <h5>- RELLENE LOS DATOS REQUERIDOS PARA CONTINUAR</h5>
+                <button class="btn-detalles" id="btn-detalles" type="button" onclick="openPopup('yape-popup')" disabled>Finalizar Compra</button>
+
+            </form>
+        </div>
+
+     <!-- Resumen de la Compra -->
+      
+     <div class="order-summary">
+        <h2>Resumen de la compra</h2>
+
+        <!-- Aquí se generarán los items del carrito -->
+        <div id="summaryItems"></div>
+
+
+     <div class="totales">
+        <!-- Sección de totales y costo de envío -->
+        <p id="summaryTotal2">S/ 0.00</p>
+        <p id="costoImpuesto">IGV (5%): S/ 0.00</p>
+        <p id="costoEnvio">Costo de envío: S/ 0.00</p>
+
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+        <p id="free-shipping-message" style="display: none;">ENVÍO GRATIS DISPONIBLE</p>
+        <p id="summaryTotalGeneral">Total S/ 0.00</p>
+    </div>
+
+        
+    </div>
+            </div>
+        </div>
+
+
+        
+    </div>
+
+    <script src="JS - Checkout.js"></script>
+    <script src="JS - Checkout2.js"></script>
+    <script src="JS - Departamentos.js"></script>
+    <script src="JS - Principal.js"></script>
+    <script src="JS - Usuario.js"></script>
+    <script src="JS - Usuario-Login.js"></script>
+</main>
+
+
+<!-- Footer -->
+
+<footer class="footer">
+    <div class="footer-top">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3 class="footer-title">Ubicación</h3>
+                <p class="footer-text">Mercado Sur 125,</p><p> Huacho 15136</p>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-title" id="contacto">Contacto</h3>
+                <p class="footer-text">Email: editorialgrethel@gmail.com</p>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-title">Síguenos</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61563910384955f" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.link/r2qn7g" class="social-link" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-title">Calificación</h3>
+                <img src="AÑADIR IMAGENES/FOOTER/Estrellas.webp" loading="lazy" alt="Estrellas" class="imagenes">
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-title">Pagos</h3>
+                <div class="payment-methods">
+                    <img src="AÑADIR IMAGENES/FOOTER/visa.webp" alt="Visa" loading="lazy" class="payment-icon">
+                    <img src="AÑADIR IMAGENES/FOOTER/paypal.webp" alt="Paypal" loading="lazy" class="payment-icon">
+                    <img src="BANCAMOVIL.avif" alt="Vende Más" loading="lazy" class="payment-icon">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="footer-bottom-content">
+            <p>&copy; 2024 Editorial Grethel. Todos los derechos reservados.</p>
+
+        </div>
+    </div>
+
+</footer>
+    
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="JS - Header.js" ></script>
+<script src="JS - Usuario.js" ></script>
+<script src="VentanaEmergente.js"></script>
+
+
+<!-- DESCUENTO -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let discount = 0; // Variable para almacenar el descuento temporal
+
+        // Función para validar el cupón
+        document.getElementById('validateCoupon').addEventListener('click', function() {
+            const couponInput = document.getElementById('coupon').value.trim(); // No convertir a mayúsculas, comparación estricta
+            const discountRates = {
+                "FACEBOOK": 0.10, // 10% de descuento
+                "OFERTA": 0.15,  // 15% de descuento
+                "EDITORIALGRETHEL": 0.20 // 20% de descuento
+            };
+            
+            // Obtener los elementos del total
+            const summaryTotalElem1 = document.getElementById('summaryTotalGeneral');
+            const summaryTotalElem2 = document.getElementById('summaryTotalGeneral2');
+            
+            // Comprobar si los elementos del total existen
+            if (!summaryTotalElem1 || !summaryTotalElem2) {
+                console.error('Uno o más elementos necesarios no se encontraron.');
+                return;
+            }
+            
+            // Obtener el valor actual del total en summaryTotal1 y extraer el número
+            const totalText1 = summaryTotalElem1.textContent;
+            const totalMatch1 = totalText1.match(/S\/ (\d+(\.\d{2})?)/);
+            let total1 = 0;
+            
+            if (totalMatch1) {
+                total1 = parseFloat(totalMatch1[1]);
+            } else {
+                console.error('El formato del total en summaryTotal1 no es válido.');
+                return;
+            }
+            
+            // Obtener el valor actual del total en summaryTotal2 y extraer el número
+            const totalText2 = summaryTotalElem2.textContent;
+            const totalMatch2 = totalText2.match(/S\/ (\d+(\.\d{2})?)/);
+            let total2 = 0;
+            
+            if (totalMatch2) {
+                total2 = parseFloat(totalMatch2[1]);
+            } else {
+                console.error('El formato del total en summaryTotal2 no es válido.');
+                return;
+            }
+            
+            // Verificar si el cupón ingresado está en la lista de códigos válidos
+            if (discountRates.hasOwnProperty(couponInput)) {
+                const discountRate = discountRates[couponInput]; // Obtener el porcentaje de descuento correspondiente
+                
+                // Aplicar el descuento temporalmente
+                const newTotal1 = roundAmount(total1 * (1 - discountRate));
+                const newTotal2 = roundAmount(total2 * (1 - discountRate));
+                
+                // Calcular el descuento aplicado
+                discount = roundAmount(total1 - newTotal1); // Calcula el descuento
+
+                // Actualizar los valores en la página
+                summaryTotalElem1.textContent = `Total: S/ ${newTotal1}`;
+                summaryTotalElem2.textContent = `S/ ${newTotal2}`;
+                
+                alert(`Cupón aplicado correctamente. Se ha aplicado un ${discountRate * 100}% de descuento.`);
+            } else {
+                // Si el cupón no es válido, asegúrate de mostrar "S/0"
+                discount = 0; // Resetear el descuento
+                summaryTotalElem1.textContent = `Total: S/ 0`;
+                summaryTotalElem2.textContent = `S/ 0`;
+                alert('Cupón inválido. Inténtalo de nuevo.');
+            }
+        });
+
+        // Función para guardar el descuento cuando se hace clic en "FINALIZE-BTN"
+        document.getElementById('finalize-btn').addEventListener('click', function() {
+            // Guardar el descuento en localStorage para usarlo en otro HTML
+            localStorage.setItem('appliedDiscount', discount);
+        });
+
+        // Función para redondear el monto
+        function roundAmount(amount) {
+            return Math.round(amount);
+        }
+    });
+</script>
+
+
+<script>
+  
+  document.addEventListener('DOMContentLoaded', function() {
+            fetch('data.json')
+                .then(response => response.json())
+                .then(data => {
+                    const searchInput = document.getElementById('searchInput');
+                    const dropdownMenu = document.getElementById('dropdownMenu');
+                    let selectedDepartment = null;
+
+                    function updateDropdown(results) {
+                        dropdownMenu.innerHTML = results.map(result => {
+                            return `<div class="dropdown-item" data-type="${result.type}" data-value="${result.value}">${result.value}</div>`;
+                        }).join('');
+                        dropdownMenu.style.display = results.length > 0 ? 'block' : 'none'; // Mostrar el menú solo si hay resultados
+                    }
+
+                    searchInput.addEventListener('input', function() {
+                        const query = searchInput.value.trim().toLowerCase();
+                        dropdownMenu.innerHTML = ''; // Limpiar el menú
+
+                        if (query.length >= 3) {
+                            const results = [];
+
+                            // Filtrar departamentos
+                            for (const department in data.departamentos) {
+                                if (department.toLowerCase().includes(query)) {
+                                    results.push({ type: 'department', value: department });
+                                }
+                            }
+
+                            // Filtrar provincias y distritos basados en el departamento seleccionado
+                            if (selectedDepartment) {
+                                const deptData = data.departamentos[selectedDepartment];
+                                Object.keys(deptData.distritos).forEach(province => {
+                                    if (province.toLowerCase().includes(query)) {
+                                        results.push({ type: 'province', value: province });
+                                    }
+                                    deptData.distritos[province].forEach(district => {
+                                        if (district.toLowerCase().includes(query)) {
+                                            results.push({ type: 'district', value: district });
+                                        }
+                                    });
+                                });
+                            }
+
+                            // Mostrar resultados
+                            if (results.length > 0) {
+                                updateDropdown(results);
+                            }
+                        } else {
+                            dropdownMenu.style.display = 'none'; // Ocultar el menú si el texto es menor a 3 caracteres
+                        }
+                    });
+
+                    dropdownMenu.addEventListener('click', function(e) {
+                        if (e.target.classList.contains('dropdown-item')) {
+                            const type = e.target.getAttribute('data-type');
+                            const value = e.target.getAttribute('data-value');
+
+                            if (type === 'department') {
+                                selectedDepartment = value;
+                                searchInput.value = value;
+                                // Actualizar menú para mostrar provincias y distritos
+                                const deptData = data.departamentos[selectedDepartment];
+                                const provinces = Object.keys(deptData.distritos).map(province => ({ type: 'province', value: province }));
+                                const districts = [];
+                                Object.values(deptData.distritos).forEach(districtArray => {
+                                    districtArray.forEach(district => {
+                                        districts.push({ type: 'district', value: district });
+                                    });
+                                });
+                                updateDropdown([...provinces, ...districts]);
+                            } else {
+                                searchInput.value = value;
+                                dropdownMenu.style.display = 'none'; // Ocultar menú después de selección
+                            }
+                        }
+                    });
+                })
+                .catch(error => console.error('Error al cargar el archivo JSON:', error));
+        });
+</script>
+
+
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+<script>
+    function formatDate(date) {
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const year = date.getFullYear();
+        return `${day}-${month}-${year}`;
+    }
+
+    function updateDeliveryDates1() {
+        const currentDate1 = new Date();
+        const endDate1 = new Date(currentDate1);
+        endDate1.setDate(currentDate1.getDate() + 3);
+
+        document.getElementById('start-date1').textContent = formatDate(currentDate1);
+        document.getElementById('end-date1').textContent = formatDate(endDate1);
+    }
+
+    function updateDeliveryDates2() {
+        const currentDate2 = new Date();
+        const endDate2 = new Date(currentDate2);
+        endDate2.setDate(currentDate2.getDate() + 3);
+
+        document.getElementById('start-date2').textContent = formatDate(currentDate2);
+        document.getElementById('end-date2').textContent = formatDate(endDate2);
+    }
+
+    function updateDeliveryDates3() {
+        const currentDate3 = new Date();
+        const endDate3 = new Date(currentDate3);
+        endDate3.setDate(currentDate3.getDate() + 3);
+
+        document.getElementById('start-date3').textContent = formatDate(currentDate3);
+        document.getElementById('end-date3').textContent = formatDate(endDate3);
+    }
+
+    // Llamando a las funciones para actualizar las 3 fechas
+    updateDeliveryDates1();
+    updateDeliveryDates2();
+    updateDeliveryDates3();
+</script>
+
+
+
+
+
+<script>
+
+function validateForm() {
+    const operacion = document.getElementById('operacion').value;
+    const confirmaOperacion = document.getElementById('confirma-operacion').value;
+    const errorMessage = document.getElementById('error-message');
+    
+    if (operacion !== confirmaOperacion) {
+        errorMessage.textContent = "Número de Operación diferente, revise de nuevo.";
+    } else {
+        errorMessage.textContent = "";
+    }
+}
+
+
+
+</script>
+
+
+
+
+
+<script>
+    // Obtener el DNI guardado del localStorage
+    const loggedInDNI = localStorage.getItem("loggedInDNI");
+            
+    // Obtener los usuarios del localStorage
+    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+    
+    // Buscar el usuario basado en el DNI
+    const user = existingUsers.find(user => user.dni === loggedInDNI);
+    
+    // Mostrar la información del usuario
+    if (loggedInDNI) {
+        document.getElementById("userDNI").textContent = loggedInDNI;
+        if (user) {
+            document.getElementById("userNames").textContent = `${user.firstName} ${user.lastName}`;
+            document.getElementById("userEmail").textContent = user.email;
+            document.getElementById("userPhone").textContent = user.phone;
+        } else {
+            document.getElementById("userNames").textContent = "No se encontró el usuario.";
+        }
+    } else {
+        document.getElementById("userDNI").textContent = "No has iniciado sesión.";
+        document.getElementById("userNames").textContent = "";
+        document.getElementById("userEmail").textContent = "";
+        document.getElementById("userPhone").textContent = "";
+    }
+    
+    
+    
+    
+      /* ------------------------CERRAR SESIÓN------------------------ */
+    
+      document.getElementById("logoutButton").addEventListener("click", function() {
+        // Verificar si hay un DNI en localStorage
+        const loggedInDNI = localStorage.getItem("loggedInDNI");
+    
+        if (loggedInDNI) {
+            // Eliminar el DNI de localStorage (cerrar sesión)
+            localStorage.removeItem("loggedInDNI");
+            alert("Has cerrado sesión.");
+            // Redirigir a la página de inicio
+            window.location.href = "/"; // Cambia a la ruta de tu página de inicio
+        } else {
+            // Si no está logueado, redirigir a la página principal
+            window.location.href = "/";
+        }
+    });
+    </script>
+    
+
+
+<!-- TERMINOS Y CONDICIONES -->
+
+
+<script>
+    // Obtener los elementos del modal y los botones
+var termsModal = document.getElementById("termsModal");
+var privacyModal = document.getElementById("privacyModal");
+var openTermsModal = document.getElementById("openTermsModal");
+var openPrivacyModal = document.getElementById("openPrivacyModal");
+var closeTerms = document.getElementById("closeTerms");
+var closePrivacy = document.getElementById("closePrivacy");
+
+// Función para abrir el modal de términos y condiciones
+openTermsModal.onclick = function(event) {
+    event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+    termsModal.style.display = "block"; // Mostrar el modal
+};
+
+// Función para abrir el modal de política de privacidad
+openPrivacyModal.onclick = function(event) {
+    event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+    privacyModal.style.display = "block"; // Mostrar el modal
+};
+
+// Función para cerrar el modal de términos
+closeTerms.onclick = function() {
+    termsModal.style.display = "none"; // Ocultar el modal
+};
+
+// Función para cerrar el modal de privacidad
+closePrivacy.onclick = function() {
+    privacyModal.style.display = "none"; // Ocultar el modal
+};
+
+// Cerrar el modal si se hace clic fuera de él
+window.onclick = function(event) {
+    if (event.target == termsModal) {
+        termsModal.style.display = "none";
+    } else if (event.target == privacyModal) {
+        privacyModal.style.display = "none";
+    }
+};
+
+</script>
+
+
+<script>
+    // Verificar si el usuario está logueado antes de acceder a checkout.html
+window.onload = function() {
+    const loggedInDNI = localStorage.getItem("loggedInDNI");
+
+    if (!loggedInDNI) {
+        // Si no está logueado, redirigir a la página de inicio de sesión
+        alert("Debes iniciar sesión para acceder a la página de checkout.");
+        window.location.href = "/"; // Cambia "login.html" por la página de login correspondiente
+    }
+};
+
+</script>
+
+</body>
+</html>
+

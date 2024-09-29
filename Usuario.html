@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Usuario</title>
+    <link rel="stylesheet" href="CSS - Usuario.css">
+    <script src="/JS - Checkout.js"></script>
+    <link rel="icon" sizes="180x180" href="/ICON/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/ICON/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/ICON/favicon-16x16.png">
+
+</head>
+<body>
+
+
+
+
+
+
+
+    <div class="container">
+        
+        <!-- Tarjeta de Usuario -->
+        <div class="user-card">
+            <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+            <div class="avatar" onclick="document.getElementById('avatarInput').click();">
+                <img id="avatarImage" src="/avatardefault.jpeg" alt="Avatar">
+            </div>
+            <div class="user-info">
+                <p><strong>Nombres</strong> <span id="userNames">Nombre Completo</span></p>
+                <p><strong>Correo Electrónico</strong> <span id="userEmail" class="truncate">Correo</span></p>
+                <p><strong>Teléfono</strong> <span id="userPhone">Teléfono</span></p>
+                <p><strong>DNI</strong> <span id="userDNI">Teléfono</span></p>
+            </div>
+                    <!-- Botón de Cerrar Sesión -->
+                    <div class="container-logout">
+                        <!-- Contenido de la página -->
+                        <button id="logoutButton" class="logout-button">Cerrar Sesión</button>
+                    </div>
+
+                </div>
+                <h1> MIS PEDIDOS</h1>
+
+        
+
+
+<div class="tablas"> 
+    <!-- Tabla de IDs de Compra -->
+    <a href="/"><h2> Volver al Inicio ←</h2></a>
+
+    <table id="id-table" border="1">
+        <tr>
+            <th>Número</th>
+            <th>Fecha de Compra</th>
+            <th>Monto</th>
+            <th>Estado</th>
+            <th>Ver Boleta</th>
+
+        </tr>
+        <!-- Aquí se agregarán nuevas filas con datos dinámicos -->
+    </table>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+function cargarDatos() {
+    let datosGenerados = JSON.parse(localStorage.getItem('datosGenerados')) || [];
+    const tabla = document.getElementById('id-table');
+
+    datosGenerados.forEach(data => {
+        const nuevaFila = document.createElement('tr');
+
+        const celdaID = document.createElement('td');
+        celdaID.textContent = data.id;
+        nuevaFila.appendChild(celdaID);
+
+        const celdaFecha = document.createElement('td');
+        celdaFecha.textContent = data.fecha; // Fecha actual almacenada en una celda
+        nuevaFila.appendChild(celdaFecha);
+
+        const celdaMonto = document.createElement('td');
+        celdaMonto.textContent = data.precio; // Precio almacenado en una celda
+        nuevaFila.appendChild(celdaMonto);
+
+        const celdaEstado = document.createElement('td');
+        celdaEstado.textContent = 'En Revisión'; // Datos ficticios
+        nuevaFila.appendChild(celdaEstado);
+
+
+
+        
+        const celdaBoton = document.createElement('td');
+const botonVerBoleta = document.createElement('button');
+
+// Configuración del botón
+botonVerBoleta.textContent = "Ver boleta";
+botonVerBoleta.classList.add('btn-ver-boleta'); // Clase para estilos personalizados
+
+// Añadir el botón a la celda y la celda a la fila
+celdaBoton.appendChild(botonVerBoleta);
+nuevaFila.appendChild(celdaBoton);
+
+// Añadir funcionalidad para abrir "detalleCompra.html"
+botonVerBoleta.addEventListener('click', function() {
+    // Guardar el ID de la compra en localStorage para acceder a él en detalleCompra.html
+    localStorage.setItem('selectedPurchaseId', data.id); // Guardamos el ID de la compra
+    window.location.href = 'detalleCompra.html'; // Redirige a la página detalleCompra.html
+});
+
+
+        
+
+
+
+
+
+        tabla.appendChild(nuevaFila);
+    });
+}
+
+window.onload = cargarDatos;
+
+    </script>
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="/JS - Usuario-Login.js"></script>
+    <script src="/JS - Usuario.js"></script>
+    <script src="/JS - Login.js"></script>
+    <script src="/JS - Checkout.js"></script>
+
+
+    
+
+</body>
+</html>
