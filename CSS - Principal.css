@@ -32,12 +32,10 @@ body{
 }
 
 
-  h3#userDNI {
-    font-size: 11PX;
-    width: auto;
-    MARGIN-LEFT: 52px;
+  
+.login.y.carrito {
+    float: left;
 }
-
 
 .sticker {
     position: absolute;
@@ -915,7 +913,7 @@ body{
     width: 225px;
     position: fixed;
     margin-top: 11px;
-    margin-left: -930px;
+    margin-left: -995px;
     margin-top: -35px;
 }
 
