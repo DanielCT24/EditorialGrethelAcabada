@@ -79,6 +79,7 @@ font-weight: 500;
     margin: 8px 0; /* Espaciado entre párrafos más delgado */
     font-size: 15px; /* Tamaño de fuente más pequeño para la información del usuario */
     line-height: 1.4; /* Espaciado entre líneas más compacto */
+    text-transform: uppercase;
 }
 
 #detallesBoleta {
@@ -127,7 +128,7 @@ font-weight: 500;
 }
 
 .cart-table td {
-    padding: 12px 15px; /* Espaciado interno */
+    padding: 12px 11px; /* Espaciado interno */
     text-align: center;
 }
 
