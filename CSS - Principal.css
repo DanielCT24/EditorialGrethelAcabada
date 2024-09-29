@@ -894,7 +894,7 @@ body{
 
 .menu-1{
     margin-right: 30px;
-    margin-left: 338px;
+    margin-left: 321px;
     width: 1000px;
     margin-top: 12px;
 }
@@ -913,7 +913,7 @@ body{
     width: 225px;
     position: fixed;
     margin-top: 11px;
-    margin-left: -995px;
+    margin-left: -972px;
     margin-top: -35px;
 }
 
@@ -1984,10 +1984,11 @@ form button:hover {
 
 
 h3#userNames {
-    font-size: 14px;
+    font-size: 13px;
+    width: 110px;
     margin-top: 2px;
     justify-content: center;
     align-content: center;
     text-align: center;
-    text-transform: uppercase; 
+    text-transform: uppercase;
 }
