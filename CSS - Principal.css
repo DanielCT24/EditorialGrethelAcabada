@@ -1426,7 +1426,6 @@ nav ul li a:hover::after {
     display: inline-block;
     cursor: pointer;
     position: relative; /* Necesario para posicionar el menú */
-    margin-top: 17px;
 }
 
 
