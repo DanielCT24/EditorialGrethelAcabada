@@ -106,7 +106,7 @@ font-weight: 500;
 }
 
 .cart-table th, .cart-table td {
-    padding: 10px 15px; /* Espaciado interno */
+    padding: 10px 13px; /* Espaciado interno */
     text-align: left; /* Alinear texto a la izquierda */
     font-size: 14px; /* Tamaño de fuente */
     border-bottom: 1px solid #dddddd; /* Solo bordes en la parte inferior */
@@ -237,6 +237,7 @@ strong.envio{
     .editorial p {
         font-size: 13px;
         text-transform: uppercase;
+        color: #555555;
     }
 
     p.id-compra{
