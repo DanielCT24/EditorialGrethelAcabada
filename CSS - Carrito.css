@@ -800,7 +800,7 @@ h1.terminos{
         font-size: 15px; /* Tamaño de fuente adecuado */
     }
 
-    .modal-content {
+    .modal-content-checkout {
         background: #f3b6f9;
         border-radius: 20px; /* Bordes más redondeados */
         margin: 5% auto; /* Espaciado del modal */
@@ -814,11 +814,11 @@ h1.terminos{
 
 
 /* Botón de cerrar */
-.close {
+.close-checkout {
     color: #cd1ee4; /* Blanco para el botón de cerrar */
     float: right;
-    margin-right: -6px;
-    margin-top: -27px;
+    margin-right: -20px;
+    margin-top: -36px;
     font-size: 35px; /* Mayor tamaño para mejor visibilidad */
     font-weight: bold;
 }
