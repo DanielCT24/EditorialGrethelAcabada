@@ -1031,7 +1031,7 @@ body{
     .logo-1 {
         width: 151px;
         margin-right: 0px;
-        margin-top: -2px;
+        margin-top: 23px;
         /* margin-left: -25px; */
     }
 
@@ -1844,7 +1844,7 @@ p {
         /* margin-top: -10px; */
     }
     .menu {
-    margin-right: 0;
+    margin-right: 19px;
     }
 }
 
